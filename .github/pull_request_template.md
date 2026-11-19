@@ -2,4 +2,4 @@
 <!-- What this piece of work does and why, in one paragraph. -->
 
 ## Keywords
-<!-- The concepts this piece of work focuses on, one bullet each as "- **term**: one-line definition". -->
+<!-- The concepts this piece of work focuses on, one bullet each as "- **term**: one-line definition ([source](url))", the definition checked against that primary source. -->

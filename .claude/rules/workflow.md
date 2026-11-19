@@ -25,7 +25,8 @@ Why: a detailed roadmap tires the learner and goes stale as the direction change
 
 ## One piece of work per pull request, by default
 A piece of work is done on its own branch, in atomic commits. A pull request closes
-it; the learner approves opening and merging it. It is merged with a merge commit,
+it; the learner approves opening and merging it, and its description follows
+`.github/pull_request_template.md`. It is merged with a merge commit,
 never squashed. The learner may choose another way for a piece of work; the agent
 follows it.
 

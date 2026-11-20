@@ -2,7 +2,9 @@ package main
 
 import (
 	"fmt"
+	"log"
 	"math"
+	"math/rand/v2"
 	"strconv"
 )
 
@@ -88,9 +90,16 @@ func main() {
 
 	fmt.Print("\n---\n\n")
 
-	var number float64 = 12312329347
-	newtonRaphsonRoot := newtonRaphsonSquareRoot(number, true)
-	fmt.Print("\n")
+	number := 1.0 // Any positive start, so the loop runs at least once; the real numbers come from inside the loop
 
-	fmt.Printf("'math.Sqrt':%.1f\nnewtonRaphsonSquareRoot:%.1f\n", math.Sqrt(number), newtonRaphsonRoot)
+	for number > 0 {
+		number = rand.Float64()*2 - 1 // Float64 gives [0, 1); *2 - 1 shifts it to [-1, 1), so about half the numbers are negative
+		newtonRaphsonRoot, err := newtonRaphsonSquareRoot(number, true)
+		if err != nil {
+			log.Println(err) // log writes to stderr, the channel for errors, so the failure is never silent
+		} else {
+			fmt.Print("\n")
+			fmt.Printf("'math.Sqrt':%.1f\nnewtonRaphsonSquareRoot:%.1f\n", math.Sqrt(number), newtonRaphsonRoot)
+		}
+	}
 }

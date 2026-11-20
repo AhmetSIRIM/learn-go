@@ -5,7 +5,11 @@ import (
 	"math"
 )
 
-func newtonRaphsonSquareRoot(radicand float64, printSteps bool) float64 {
+func newtonRaphsonSquareRoot(radicand float64, printSteps bool) (float64, error) {
+	if radicand < 0 { // Guard clause: reject invalid input early, so the main path below stays unindented
+		return 0, fmt.Errorf("cannot take the square root of a negative number: %v", radicand)
+	}
+
 	currentGuess := 1.0
 	const tolerance = 1e-9
 
@@ -24,5 +28,5 @@ func newtonRaphsonSquareRoot(radicand float64, printSteps bool) float64 {
 		}
 	}
 
-	return currentGuess
+	return currentGuess, nil
 }

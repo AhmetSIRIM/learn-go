@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"strconv"
+)
 
 var iAmGlobalVariable = "I am a global variable" // Package level: var is required here, := only works inside a function
 
@@ -32,4 +35,17 @@ func main() {
 	shortDeclaredVariable = "I am the modified shortDeclaredVariable: " + shortDeclaredVariable // Assignment uses =, not :=
 	fmt.Println(shortDeclaredVariable)
 	// shortDeclaredVariable := "again" // Does not compile: no new variables on left side of :=
+
+	fmt.Println("---")
+
+	var zeroValueOfFloat64 float64
+	convertedFloat64 := strconv.FormatFloat(zeroValueOfFloat64, 'f', -1, 64) // 'f': no exponent, -1: fewest digits that parse back to the same value, 64: the value is a float64
+	fmt.Println("Zero value of float64: " + convertedFloat64)                // + joins only strings: Go never converts a number to a string on its own
+	var zeroValueOfString string
+	fmt.Println("Zero value of string: " + zeroValueOfString)
+	fmt.Printf("Zero value of string, quoted: %q\n", zeroValueOfString) // %q puts quotes around it, so the empty string shows as ""
+	var zeroValueOfBool bool
+	fmt.Println("Zero value of bool: " + strconv.FormatBool(zeroValueOfBool))
+	var zeroValueOfInt int
+	fmt.Println("Zero value of int:", zeroValueOfInt) // Println takes values of any type, so no strconv is needed
 }

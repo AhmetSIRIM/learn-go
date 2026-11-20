@@ -38,3 +38,14 @@ comes before an attempt does the learner's thinking for them.
 
 Source: Bastani et al., "Generative AI without guardrails can harm learning" (PNAS,
 2025).
+
+## Highlights are kept on request
+When the learner asks, the agent adds a one-line entry to `docs/highlights.md`: the
+date, the piece of work linked to its pull request (or its branch name, unlinked,
+while none exists), and what caught the learner's interest. For example:
+
+```markdown
+- 2026-11-20 · go-basics ([#<number>](https://github.com/AhmetSIRIM/learn-go/pull/<number>)): `defer` reads its argument on the defer line, not when the deferred call runs.
+```
+
+Why: the learner wants to keep the moments that excited them.

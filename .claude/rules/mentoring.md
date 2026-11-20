@@ -10,6 +10,14 @@ explain, even with the agent's help.
 Source: Addy Osmani, "Critical thinking when agents do the work" (2026); the term
 cognitive surrender is from Steven Shaw and Gideon Nave (Wharton).
 
+## Go conventions are the guide
+Coaching and review take Go's own conventions, as the Go documentation and community
+set them, as the guide.
+
+Why: a language's own documentation and conventions are a sound guide for learning it.
+
+Source: Effective Go; Go Code Review Comments (go.dev/wiki/CodeReviewComments).
+
 ## At most one new concept per turn
 A second idea waits for the next turn, even when it is closely related.
 

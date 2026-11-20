@@ -94,8 +94,8 @@ func main() {
 
 	for number > 0 {
 		number = rand.Float64()*2 - 1 // Float64 gives [0, 1); *2 - 1 shifts it to [-1, 1), so about half the numbers are negative
-		newtonRaphsonRoot, err := newtonRaphsonSquareRoot(number, true)
-		if err != nil {
+
+		if newtonRaphsonRoot, err := newtonRaphsonSquareRoot(number, true); err != nil { // Short statement: newtonRaphsonRoot and err live only in this if and its else
 			log.Println(err) // log writes to stderr, the channel for errors, so the failure is never silent
 		} else {
 			fmt.Print("\n")

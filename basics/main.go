@@ -111,4 +111,12 @@ func main() {
 	fmt.Println("25:", describeTemperature(25)) // Boundary
 	fmt.Println("60:", describeTemperature(60))
 	fmt.Println("100:", describeTemperature(100)) // Boundary
+
+	fmt.Print("\n********************************************************************************************\n\n")
+
+	showDeferOrder()
+	fmt.Println("---")
+	showDeferArgumentTiming()
+	fmt.Println("---")
+	showNestedDeferStacks()
 }

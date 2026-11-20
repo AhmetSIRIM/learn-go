@@ -104,4 +104,11 @@ func main() {
 
 	fmt.Print("\n********************************************************************************************\n\n")
 
+	fmt.Println("-5:", describeTemperature(-5))
+	fmt.Println("0:", describeTemperature(0)) // Boundary
+	fmt.Println("10:", describeTemperature(10))
+	fmt.Println("15:", describeTemperature(15)) // Boundary
+	fmt.Println("25:", describeTemperature(25)) // Boundary
+	fmt.Println("60:", describeTemperature(60))
+	fmt.Println("100:", describeTemperature(100)) // Boundary
 }

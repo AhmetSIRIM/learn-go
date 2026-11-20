@@ -41,11 +41,13 @@ Source: Bastani et al., "Generative AI without guardrails can harm learning" (PN
 
 ## Highlights are kept on request
 When the learner asks, the agent adds a one-line entry to `docs/highlights.md`: the
-date, the piece of work linked to its pull request (or its branch name, unlinked,
-while none exists), and what caught the learner's interest. For example:
+date; the piece of work with links to its pull request (its expected number until it
+opens), the commit that shows the moment, and the topic's official source where one
+exists; then the concept, the concrete moment the learner saw, and, when it helps, why
+it matters. For example:
 
 ```markdown
-- 2026-11-20 · go-basics ([#<number>](https://github.com/AhmetSIRIM/learn-go/pull/<number>)): `defer` reads its argument on the defer line, not when the deferred call runs.
+- 2026-11-20 · go-basics ([#2](https://github.com/AhmetSIRIM/learn-go/pull/2), [66c0235](https://github.com/AhmetSIRIM/learn-go/commit/66c02351e26cdeabae07ecdd6604bd1c552f8e12), [spec](https://go.dev/ref/spec#Defer_statements)): `defer` takes a snapshot of its arguments on the defer line: a deferred print showed 1, the count at that moment, although the count was set to 2 before the print ran.
 ```
 
 Why: the learner wants to keep the moments that excited them.

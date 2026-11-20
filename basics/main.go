@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"math"
 	"strconv"
 )
 
@@ -84,4 +85,12 @@ func main() {
 		word += word // Doubles the word, so its length goes 2, 4, 8, 16, 32
 	}
 	fmt.Println(len(word), word)
+
+	fmt.Print("\n---\n\n")
+
+	var number float64 = 12312329347
+	newtonRaphsonRoot := newtonRaphsonSquareRoot(number, true)
+	fmt.Print("\n")
+
+	fmt.Printf("'math.Sqrt':%.1f\nnewtonRaphsonSquareRoot:%.1f\n", math.Sqrt(number), newtonRaphsonRoot)
 }

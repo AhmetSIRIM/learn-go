@@ -34,17 +34,17 @@ Why: the commit history is the record of the learning; a squash collapses it int
 commit and the record is gone. A default rather than a fixed rule leaves room to try
 other ways of working.
 
-## One directory per piece of work
-Each piece of work lives in its own directory at the repository root: a program as
-`package main`, run with `go run ./<name>`, or a library package with its tests.
-Directory names follow Go package names: lowercase, one word, no hyphens or
-underscores.
+## Directories follow depth and breadth
+A piece of work that builds on an earlier one extends that piece's directory; a piece
+of work that opens new ground starts a new directory at the repository root. A
+directory is named for what it covers, whether that is a level, a domain, or
+something else. Directory names follow Go's package naming convention.
 
-Why: a directory per piece of work keeps each one isolated and easy to find again,
-and an unfinished one does not get in the way of the next. Package-style names build
-one naming habit across programs and packages. Go's module layout guide suggests
-`cmd/` for repositories that mix commands and packages; this repository keeps each
-piece of work whole at the root instead.
+Why: a directory grows as its line of learning deepens, and a new one marks new
+ground, so each line stays in one place. The split follows the same depth-or-breadth
+axis the next piece of work is chosen on. Package-style names build one naming habit
+across programs and packages. This repository keeps each directory at the root rather
+than under `cmd/`.
 
 Source: Go, "Organizing a Go module" (go.dev/doc/modules/layout); Effective Go,
 "Package names".

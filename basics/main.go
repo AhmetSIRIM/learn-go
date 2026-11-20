@@ -58,4 +58,30 @@ func main() {
 	fmt.Println("fahrenheit: " + strconv.FormatFloat(fahrenheit, 'f', -1, 64))
 	fahrenheit, kelvin := celsiusToFahrenheitAndKelvin(celsius)
 	fmt.Println("fahrenheit and kelvin:", fahrenheit, "&", kelvin)
+
+	fmt.Println("\n********************************************************************************************")
+	fmt.Println()
+
+	start := -43
+	end := -37
+
+	for index := start; index <= end; index++ { // Three-part form: init; condition; post
+		fmt.Printf("c: %d & f: %.1f\n", index, celsiusToFahrenheit(float64(index))) // %.1f: one decimal, hides float rounding noise such as -45.400000000000006
+	}
+
+	fmt.Print("\n---\n\n")
+
+	for index := range 10 { // Range over an int: index runs from 0 to 9, the same as index := 0; index < 10; index++
+		fahrenheit, kelvin = celsiusToFahrenheitAndKelvin(float64(index)) // Two results cannot sit next to other arguments, so they are taken apart first
+		fmt.Printf("c: %d & f: %.1f & k: %.2f\n", index, fahrenheit, kelvin)
+	}
+
+	fmt.Print("\n---\n\n")
+
+	word := "go"
+	for len(word) < 20 { // While form: only a condition, for a loop whose step count is not known up front
+		fmt.Println(len(word), word)
+		word += word // Doubles the word, so its length goes 2, 4, 8, 16, 32
+	}
+	fmt.Println(len(word), word)
 }

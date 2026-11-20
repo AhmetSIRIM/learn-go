@@ -88,18 +88,20 @@ func main() {
 	}
 	fmt.Println(len(word), word)
 
-	fmt.Print("\n---\n\n")
+	fmt.Print("\n********************************************************************************************\n\n")
 
-	number := 1.0 // Any positive start, so the loop runs at least once; the real numbers come from inside the loop
-
-	for number > 0 {
-		number = rand.Float64()*2 - 1 // Float64 gives [0, 1); *2 - 1 shifts it to [-1, 1), so about half the numbers are negative
-
-		if newtonRaphsonRoot, err := newtonRaphsonSquareRoot(number, true); err != nil { // Short statement: newtonRaphsonRoot and err live only in this if and its else
-			log.Println(err) // log writes to stderr, the channel for errors, so the failure is never silent
-		} else {
-			fmt.Print("\n")
-			fmt.Printf("'math.Sqrt':%.1f\nnewtonRaphsonSquareRoot:%.1f\n", math.Sqrt(number), newtonRaphsonRoot)
-		}
+	number := rand.Float64() * 9 // A positive number below 9
+	if rand.IntN(2) == 0 {       // A coin flip: IntN(2) returns 0 or 1, and math/rand has no Bool
+		number = -number
 	}
+
+	if newtonRaphsonRoot, err := newtonRaphsonSquareRoot(number, true); err != nil { // Short statement: newtonRaphsonRoot and err live only in this if and its else
+		log.Println(err) // log writes to stderr, the channel for errors, so the failure is never silent
+	} else {
+		fmt.Print("\n")
+		fmt.Printf("'math.Sqrt'            :%.1f\nnewtonRaphsonSquareRoot:%.1f\n", math.Sqrt(number), newtonRaphsonRoot)
+	}
+
+	fmt.Print("\n********************************************************************************************\n\n")
+
 }

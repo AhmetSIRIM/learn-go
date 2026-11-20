@@ -48,4 +48,14 @@ func main() {
 	fmt.Println("Zero value of bool: " + strconv.FormatBool(zeroValueOfBool))
 	var zeroValueOfInt int
 	fmt.Println("Zero value of int:", zeroValueOfInt) // Println takes values of any type, so no strconv is needed
+
+	fmt.Println("\n********************************************************************************************")
+	fmt.Println()
+
+	var celsius float64 = 100
+	fmt.Println(celsius)
+	fahrenheit := celsiusToFahrenheit(celsius)
+	fmt.Println("fahrenheit: " + strconv.FormatFloat(fahrenheit, 'f', -1, 64))
+	fahrenheit, kelvin := celsiusToFahrenheitAndKelvin(celsius)
+	fmt.Println("fahrenheit and kelvin:", fahrenheit, "&", kelvin)
 }
